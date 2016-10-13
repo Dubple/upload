@@ -1,0 +1,22 @@
+{% extends 'upload/base.html' %}
+
+{% block head %}
+  <title>Upload File</title>
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div id="uploaddiv">
+      {% for field in form %}
+        {{ field.error }}
+      {% endfor %}
+      <form enctype="multipart/form-data" method="post">{% csrf_token %}
+        {% for each in form %}
+          {{each}}
+        {% endfor %}
+
+        <input type="submit" class="btn btn-info upform" id="uploadbtn" value="Upload">
+      </form>
+    </div>
+  </div>
+{% endblock %}

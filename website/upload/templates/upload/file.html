@@ -1,0 +1,18 @@
+{% extends 'upload/base.html' %}
+
+{% block head %}
+  <title>{{name}}</title>
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div id="chart" style="width: 800px;">
+      <center>
+        <h1>{{name}}</h1>
+        <embed type="image/svg+xml" src={{ chart|safe }} />
+        <br>
+        <h3>{{description}}</h3>
+      </center>
+    </div>
+  </div>
+{% endblock %}

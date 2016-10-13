@@ -1,0 +1,242 @@
+html, body {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
+.navbar.navbar-default.no-margin{
+  background-color: rgba(245,245,245,0.9);
+  border-radius: 0px;
+  border: none;
+}
+
+#homeheader{
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+
+#uploaddiv{
+  position: absolute;
+  top: calc(50% - 150px);
+  width: 400px;
+  left: calc(50% - 200px);
+}
+
+#uploadbtn{
+  position: relative;
+  width: 75px;
+  left: calc(50% - 37.5px);
+}
+
+.upform{
+  margin-bottom: 7.5px;
+}
+
+.no-margin{
+  margin: 0px;
+  background-color: #F5F5F5;
+}
+
+.jumbotron{
+  margin: 0px;
+}
+
+.imagediv{
+  height: 50vh;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.imagediv.one{
+  background-image: url('../files/images/index/gradient1.jpg');
+  #background-image: url('http://i.imgur.com/GsGu8l2.jpg');
+}
+.imagediv.two{
+  background-image: url('../files/images/index/gradient2.jpg');
+  #background-image: url('http://www.mrwallpaper.com/wallpapers/Mountains-Gray-Wolf-1920x1080.jpg');
+}
+.imagediv.three{
+  background-image: url('../files/images/index/gradient3.jpg');
+  #background-image: url('http://i.imgur.com/GsGu8l2.jpg');
+}
+
+.errorlist{
+  font-family: PT Sans;
+  font-size: 14px;
+  color: #F70;
+  list-style: none;
+  margin-top: -2.5px;
+  margin-bottom: -2.5px;
+  margin-left: -25px;
+}
+.etwo{
+  font-family: PT Sans;
+  font-size: 14px;
+  color: #F70;
+  list-style: none;
+  margin-top: -2.5px;
+  margin-bottom: -2.5px;
+  margin-left: -15px;
+}
+
+#welcome{
+  position: relative;
+  background-color: #FAFAFA;
+  height: 60vh;
+}
+
+#secure{
+  position: relative;
+  background-color: #FAFAFA;
+  height: 60vh;
+}
+
+#accessible{
+  position: relative;
+  background-color: #FAFAFA;
+  height: 60vh;
+}
+
+#signup{
+  position: relative;
+  background-color: #FAFAFA;
+  height: 60vh;
+}
+
+#signupform{
+  position: relative;
+  float: right;
+  clear: both;
+  padding-right: 15%;
+  width: auto;
+  margin-top: 2.5%;
+}
+.login-control{
+  font-family: PT Sans;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 350px;
+}
+.signupform-control{
+  font-family: PT Sans;
+  font-size: 16px;
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 350px;
+}
+.signupform-control.name{
+  width: 170px;
+}
+.input-div#first_name{
+  padding-right: 10px;
+}
+.input-div#first_name, .input-div#last_name{
+  float: left;
+  margin-bottom: 10px;
+}
+.form-control.signupform-control:focus{
+  border-color: #0AE;
+  border-radius: 3px;
+  outline: none;
+  webkit-box-shadow: none;
+  box-shadow: none;
+}
+.btn.btn-info.signupform-control{
+  margin-top: 10px;
+  width: 175px;
+  left: 87.5px;
+}
+
+@media screen and (max-width:1350px){
+  #signupform{
+    position: relative;
+    float: left;
+    clear: both;
+    padding-left: 30%;
+    padding-top: 300px;
+    width: auto;
+    margin-top: 2.5%;
+  }
+
+  #signup{
+    height: 80vh;
+  }
+}
+
+@media screen and (min-width:1600px){
+  .signupform-control{
+    position: relative;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 350px;
+  }
+  .btn.btn-info.signupform-control{
+    margin-top: 10px;
+    width: 175px;
+    left: 87.5px;
+  }
+}
+
+#footer{
+  position: relative;
+  padding-top: 0px;
+  margin-top: 0px;
+  border-top: 0px;
+  height: 225px;
+}
+
+@media screen and (max-width:666px){
+  #footer{
+    height: 40vh;
+  }
+}
+
+#footercontent{
+  position: relative;
+  padding-left: 17.5%;
+  align-content: center;
+  width: 100%;
+}
+
+.foot-list{
+  position: relative;
+  float: left;
+  top: 50px;
+  margin-left: 30px;
+}
+
+.foot-list-head{
+  position: relative;
+  font-family: Ubuntu;
+  font-size: 20px;
+}
+
+.foot-list-item{
+  position: relative;
+  font-family: Ubuntu;
+  font-size: 16px;
+  color: grey;
+}
+
+.foot-list-item:hover{
+  color: grey;
+  text-decoration: none;
+}
+
+.text-text{
+  position: relative;
+  font-family: PT Sans;
+  font-size: 32px;
+}
+
+.info-text{
+  position: relative;
+  margin-top: 40px;
+  line-height: 22.5px
+}
+
+.index-content-box{
+  margin-top: 200px;
+}

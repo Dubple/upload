@@ -1,0 +1,46 @@
+{% extends 'upload/base.html' %}
+
+{% load widget_tweaks %}
+
+{% block head %}
+  {% load staticfiles %}
+  <title>Log in to your account</title>
+{% endblock %}
+
+{% block content %}
+  <div id="loginform">
+    <form action="" method="post">
+      {% csrf_token %}
+
+      {% for each in form %}
+
+<!--
+        <table>
+          <tr>
+              <td>{{ form.username.label_tag }}</td>
+              <td>{{ form.username }}</td>
+          </tr>
+          <tr>
+              <td>{{ form.password.label_tag }}</td>
+              <td>{{ form.password }}</td>
+          </tr>
+        </table> -->
+
+        <div class="input-div" id="{{each.name}}">
+          {{each.label_tag}}
+
+          {% if form.errors %}
+            <div class="form-error etwo">
+              {{each.errors}}
+            </div>
+          {% endif %}
+
+          {{each|add_class:"form-control login-control"}}
+        </div>
+
+      {% endfor %}
+
+      <input class="btn btn-info" type="submit" value="Log in">
+    </form>
+  </div>
+{% endblock %}

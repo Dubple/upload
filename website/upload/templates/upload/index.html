@@ -1,0 +1,197 @@
+{% extends 'upload/base.html' %}
+
+{% block head %}
+  {% load staticfiles %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script type="text/javascript" src="{% static 'js/welcome.js' %}"></script>
+  <title>Welcome</title>
+{% endblock %}
+
+{% block content %}
+
+{% if failed == True %}
+<script>
+  $(document).ready(function(){
+    var x = $('#signup').offset().top;
+    console.log(x);
+    $('html, body').animate({ scrollTop: x }, 750);
+  });
+</script>
+{% endif %}
+  <!--                HEADER                -->
+  <div id="homeheader">
+    <nav class="navbar navbar-default no-margin">
+      <div class="container">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#welcome">Cloud</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-left">
+              <li><a href="#secure">Secure</a></li>
+              <li><a href="#accessible">Accessible</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#signup">Sign up</a></li>
+              <li><a href="/login/">Login</a></li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </div>
+    </nav>
+  </div>
+
+  <!--                BODY                -->
+
+    <div id="welcome" class="jumbotron">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-md-6 text-center index-content-box">
+            <h2 class="text-text">Store everything on <b>one account</b></h2>
+            <h4 class="info-text"><i>Upon signup you will receive 15 GB of free storage </br> and you can purchase extra storage if necessary</i></h4>
+          </div>
+
+          <img class="col-md-6 center-block" src="{% static 'files/images/index/test-security.png' %}">
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="imagediv one">
+    </div>
+
+    <div id="secure" class="jumbotron">
+      <div class="container">
+
+        <div class="row">
+
+          <img class="col-md-6 center-block" src="{% static 'files/images/index/test-security.png' %}">
+
+          <div class="col-md-6 text-center index-content-box">
+            <h2 class="text-text">Keep it <b>safe</b> in a <b>secure cloud</b></h2>
+            <h4 class="info-text"><i>We use industry standard secure technologies</br> to keep your data and your account safe from intruders</i></h4>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+      <div class="imagediv two">
+      </div>
+
+    <div id="accessible" class="jumbotron">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-md-6 text-center index-content-box">
+            <h2 class="text-text">Accessible from <b>anywhere</b> to <b>only you</b></h2>
+            <h4 class="info-text"><i>Where ever you go, as long as your files are stored on your account</br>they will stay there and you can download, view or share them</br> whenever from wherever</i></h4>
+          </div>
+
+          <img class="col-md-6 center-block" src="{% static 'files/images/index/test-security.png' %}">
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="imagediv three">
+    </div>
+
+    <div id="signup" class="jumbotron">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-md-6">
+            <h2 class="text-text"><b>Sign up</b> now and get <b>15 GB</b> for free</h2>
+            <h4 class="login-text"><i>Or log in if you already have an account</i></h4>
+          </div>
+
+          <div id="signupform" class="col-md-6">
+            <form enctype="multipart/form-data" method="post">
+              {% csrf_token %}
+              {% for field in registerform %}
+
+                {% if registerform.errors %}
+                  <div class="form-error">
+                    {{field.errors}}
+                  </div>
+                {% endif %}
+
+                <div class="input-div" id="{{field.name}}">
+                    {{field}}
+                </div>
+              {% endfor %}
+
+              <input type="submit" class="btn btn-info signupform-control" id="signupbtn" value="Sign Up">
+
+            </form>
+            </br>
+            <a href="/login/"><center><h5 class="login-text"><b>Click here to login if you already have an account</b></h5></center></a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  <div id="footer" class="jumbotron">
+    <div id="footercontent">
+
+      <ul class="foot-list">
+        <h5 class="foot-list-head">Cloud</h5>
+        <a href="" class="foot-list-item">Item 1</a>
+        </br>
+        <a href="" class="foot-list-item">Item 2</a>
+        </br>
+        <a href="" class="foot-list-item">Item 3</a>
+      </ul>
+
+      <ul class="foot-list">
+        <h5 class="foot-list-head">About us</h5>
+        <a href="" class="foot-list-item">Item 1</a>
+        </br>
+        <a href="" class="foot-list-item">Item 2</a>
+        </br>
+        <a href="" class="foot-list-item">Item 3</a>
+      </ul>
+
+      <ul class="foot-list">
+        <h5 class="foot-list-head">Support</h5>
+        <a href="" class="foot-list-item">Item 1</a>
+        </br>
+        <a href="" class="foot-list-item">Item 2</a>
+        </br>
+        <a href="" class="foot-list-item">Item 3</a>
+      </ul>
+
+      <ul class="foot-list">
+        <h5 class="foot-list-head">Plans</h5>
+        <a href="" class="foot-list-item">Item 1</a>
+        </br>
+        <a href="" class="foot-list-item">Item 2</a>
+        </br>
+        <a href="" class="foot-list-item">Item 3</a>
+      </ul>
+
+    </div>
+  </div>
+
+{% endblock %}
